@@ -1,1 +1,0 @@
-const const name = new type(arguments);

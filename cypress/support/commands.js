@@ -22,4 +22,21 @@
 //
 //
 // -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+//Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+  
+
+Cypress.Commands.add('loginTrello',()=>{
+    const email ="musab.sh2006@gmail.com";
+    const password ="MUSAB@123MUSAB";
+    cy.visit("https://trello.com/login");
+      
+        cy.get("#user").clear().type(email);
+        cy.get("#login").first().click();
+        cy.wait(3000);
+        cy.origin("https://id.atlassian.com/login",()=>{
+
+        cy.get("#password").clear().type("MUSAB@123MUSAB"+"{enter}");
+})
+        // cy.get("#login-submit").click();
+    })
+
